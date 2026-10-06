@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ניהול הכסף שלי</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <h1>💰 הכסף שלי</h1>
+        <p>ניהול פשוט וברור של ההכנסות וההוצאות</p>
+      </div>
+      <button id="clearAll" class="ghost">איפוס נתונים</button>
+    </header>
+
+    <section class="balance card">
+      <span>יתרה נוכחית</span>
+      <strong id="balance">₪0.00</strong>
+    </section>
+
+    <section class="actions">
+      <button class="action deposit" data-type="deposit">➕ הפקדה</button>
+      <button class="action expense" data-type="expense">➖ הוצאה</button>
+    </section>
+
+    <section class="stats">
+      <div class="card"><span>סה״כ הפקדות</span><b id="income">₪0.00</b></div>
+      <div class="card"><span>סה״כ הוצאות</span><b id="expenses">₪0.00</b></div>
+    </section>
+
+    <section class="history card">
+      <div class="section-title">
+        <h2>היסטוריה</h2>
+        <span id="count">0 פעולות</span>
+      </div>
+      <div id="empty" class="empty">עדיין אין פעולות. הוסף הפקדה או הוצאה כדי להתחיל.</div>
+      <div id="list"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="dialog">
+      <button id="close" class="close">×</button>
+      <h2 id="modalTitle">הפקדה</h2>
+      <label>סכום בשקלים
+        <input id="amount" type="number" min="0.01" step="0.01" placeholder="למשל 200">
+      </label>
+      <label>מה עשית?
+        <input id="description" maxlength="80" placeholder="למשל משכורת / קנייה">
+      </label>
+      <label>תאריך
+        <input id="date" type="date">
+      </label>
+      <button id="save" class="save">שמירה</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
